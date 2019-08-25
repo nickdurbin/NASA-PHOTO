@@ -7,7 +7,6 @@ const NavigationStyles = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 10vh;
   background-color: #058ED9;
   color: #F4EBD9;
   font-weight: 600;
@@ -15,7 +14,7 @@ const NavigationStyles = styled.nav`
 
 const NavHeader = styled.h1`
   margin-left: 2rem;
-  font-size: 3rem;
+  font-size: 2.3rem;
   font-weight: 600;
 `;
 
