@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import styled from 'styled-components';
 import Navigation from './Components/Navigation';
 import Footer from './Components/Footer';
 import VideoPlayer from './Components/VideoPlayer';
