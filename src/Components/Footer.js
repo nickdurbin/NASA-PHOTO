@@ -6,10 +6,10 @@ const FooterStyles = styled.footer`
   flex-flow: row nowrap;
   justify-content: space-evenly;
   align-items: center;
-  background-color: darkblue;
+  background-color: #058ED9;
   width: 100%;
   height: 10vh;
-  color: white;
+  color: #F4EBD9;
   font-size: 1.2rem;
   `;
 

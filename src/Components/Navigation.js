@@ -8,8 +8,8 @@ const NavigationStyles = styled.nav`
   align-items: center;
   width: 100%;
   height: 10vh;
-  background-color: darkblue;
-  color: white;
+  background-color: #058ED9;
+  color: #F4EBD9;
   font-weight: 600;
 `;
 
@@ -20,7 +20,7 @@ const NavHeader = styled.h1`
 `;
 
 const AnchorStyles = styled.a`
-  color: white;
+  color: #F4EBD9;
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: 600;
