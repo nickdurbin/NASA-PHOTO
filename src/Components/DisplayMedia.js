@@ -13,7 +13,7 @@ function DisplayMedia({ media, url }) {
   ? 
   <ReactPlayer url={ url } width='60%' height='100%' alt="NASA" controls='true'/>
   :
-  <ImgStyle src={ url } alt="NASA"/>
+  <ImgStyle src={ url } alt="NASA" />
 }
 
 export default DisplayMedia;
