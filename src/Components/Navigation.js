@@ -7,11 +7,16 @@ const NavigationStyles = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 100px;
+  height: 10vh;
   background-color: darkblue;
   color: white;
   font-weight: 600;
-  padding: 0 2rem;
+`;
+
+const NavHeader = styled.h1`
+  margin-left: 2rem;
+  font-size: 3rem;
+  font-weight: 600;
 `;
 
 const AnchorStyles = styled.a`
@@ -19,7 +24,7 @@ const AnchorStyles = styled.a`
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: 600;
-  padding-right: 4rem;
+  padding: 0 2rem;
 `;
 
 function Navigation() {
@@ -27,7 +32,7 @@ function Navigation() {
   return (
     <div>
       <NavigationStyles>
-        <h1>NASA Photo Of The Day!</h1>
+        <NavHeader>POTD</NavHeader>
         <div className="navLinks">
           <AnchorStyles href="https://twitter.com/">Sign-Up</AnchorStyles>
           <AnchorStyles href="https://twitter.com/">Log-in</AnchorStyles>
