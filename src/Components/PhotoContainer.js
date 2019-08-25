@@ -68,13 +68,13 @@ function PhotoContainer() {
   }, [url, date]);
 
   return (
-    <MainContainerStyle>
-      <Title>{ title }</Title>
-      <ImgContainer>
-        <DisplayMedia media={ media } url={ url }/>
-      </ImgContainer>
-      <Description>{ description }</Description>
-    </MainContainerStyle>
+      <MainContainerStyle>
+        <Title>{ title }</Title>
+        <ImgContainer>
+          <DisplayMedia media={ media } url={ url }/>
+        </ImgContainer>
+        <Description>{ description }</Description>
+      </MainContainerStyle>
   )
 }
 
