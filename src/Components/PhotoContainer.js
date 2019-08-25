@@ -41,8 +41,8 @@ const ImgContainer = styled.div`
   align-items: center;
   width: 80%;
   height: 60%;
-  margin: 0 auto;
-  background-color: #EEE;
+  margin: 20px auto;
+  background-color: #483D3F;
 `;
 
 function PhotoContainer() {
@@ -52,8 +52,6 @@ function PhotoContainer() {
   const [media, setMedia] = useState();
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
-
-  // &date=2019-08-24
 
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=JiwEVnVzu9wP1E6TyHriFJA7YN5fcEJgROtS05Al`)
