@@ -1,14 +1,24 @@
 import React from "react";
 import "./App.css";
+import styled from 'styled-components';
+import Navigation from './Components/Navigation';
+import Footer from './Components/Footer';
+import VideoPlayer from './Components/VideoPlayer';
+import PhotoContainer from './Components/PhotoContainer';
+
+const HomePageStyle = styled.div`
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
-    </div>
+    <HomePageStyle>
+      <Navigation />
+      <PhotoContainer />
+      <Footer />
+    </HomePageStyle>
   );
 }
 
