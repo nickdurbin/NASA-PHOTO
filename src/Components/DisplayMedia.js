@@ -8,12 +8,14 @@ const ImgStyle = styled.img`
   object-fit: cover;
 `;
 
-function DisplayMedia(props) {
-  return (props.media === "video")
+function DisplayMedia({ media, url }) {
+  return (media === "video")
   ? 
-  <ReactPlayer url={ props.url } width='100%' height='100%' alt="NASA"/>
+  <ReactPlayer url={ url } width='100%' height='100%' alt="NASA" controls='true'/>
   :
-  <ImgStyle src={ props.url } alt="NASA"/>
+  <ImgStyle src={ url } alt="NASA"/>
 }
 
-export default DisplayMedia
+
+
+export default DisplayMedia;

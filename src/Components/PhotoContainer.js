@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import DisplayMedia from './DisplayMedia'
+import DisplayMedia from './DisplayMedia';
 import styled from 'styled-components';
 import axios from 'axios';
 
@@ -53,29 +53,29 @@ function PhotoContainer() {
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
 
+  // &date=2019-08-24
+
   useEffect(() => {
-    axios.get(`https://api.nasa.gov/planetary/apod?api_key=JiwEVnVzu9wP1E6TyHriFJA7YN5fcEJgROtS05Al&date=2019-08-24`)
+    axios.get(`https://api.nasa.gov/planetary/apod?api_key=JiwEVnVzu9wP1E6TyHriFJA7YN5fcEJgROtS05Al`)
     .then(res => {
       setUrl(res.data.url);
       setTitle(res.data.title);
       setDescription(res.data.explanation);
       setDate(res.data.date);
-      setMedia(res.data.mediatype) 
+      setMedia(res.data.media_type) 
     })
     .catch(error => {
       console.log('You have an error.', error);
     })
-  }, [url]);
+  }, [url, date]);
 
   return (
     <MainContainerStyle>
-
       <Title>{ title }</Title>
       <ImgContainer>
         <DisplayMedia media={ media } url={ url }/>
       </ImgContainer>
       <Description>{ description }</Description>
-
     </MainContainerStyle>
   )
 }
