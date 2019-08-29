@@ -2,16 +2,29 @@ import React, { useState, useEffect } from 'react';
 import DisplayMedia from './DisplayMedia';
 import styled from 'styled-components';
 import axios from 'axios';
+import Calendar from 'react-calendar';
 
 const MainContainerStyle = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #483D3F;
+`;
+
+const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 90vh;
-  margin: 0 auto;
-  background-color: #483D3F;
+  width: 30%;
+  height: 100%;
+  background-color: 
+  color: white;
+  font-size: 1rem;
+  overflow-y: scroll;
 `;
 
 const Title = styled.div`
@@ -35,12 +48,20 @@ const Description = styled.div`
   margin: 0 auto;
 `;
 
+const Photo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  color: white;
+`;
+
 const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 60%;
   margin: 20px auto;
   background-color: #483D3F;
 `;
@@ -58,8 +79,8 @@ function PhotoContainer() {
     .then(res => {
       setUrl(res.data.url);
       setTitle(res.data.title);
-      setDescription(res.data.explanation);
       setDate(res.data.date);
+      setDescription(res.data.explanation);
       setMedia(res.data.media_type) 
     })
     .catch(error => {
@@ -69,11 +90,16 @@ function PhotoContainer() {
 
   return (
       <MainContainerStyle>
-        <Title>{ title }</Title>
-        <ImgContainer>
-          <DisplayMedia media={ media } url={ url }/>
-        </ImgContainer>
-        <Description>{ description }</Description>
+        <Info>
+          <Description>{ description }</Description>
+          <Calendar onChange={date}/>
+        </Info>
+        <Photo>
+          <Title>{ title }</Title>
+          <ImgContainer>
+            <DisplayMedia media={ media } url={ url }/>
+          </ImgContainer>
+        </Photo>
       </MainContainerStyle>
   )
 }
