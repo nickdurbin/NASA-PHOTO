@@ -79,7 +79,7 @@ function PhotoContainer() {
       setTitle(res.data.title);
       setDate(res.data.date);
       setDescription(res.data.explanation);
-      setMedia(res.data.media_type) 
+      setMedia(res.data.media_type); 
     })
     .catch(error => {
       console.log('You have an error.', error);
@@ -90,7 +90,7 @@ function PhotoContainer() {
       <MainContainerStyle>
         <Info>
           <Description>{ description }</Description>
-          <Calendar onChange={date}/>
+          <Calendar />
         </Info>
         <Photo>
           <Title>{ title }</Title>
