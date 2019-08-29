@@ -2,16 +2,26 @@ import React, { useState, useEffect } from 'react';
 import DisplayMedia from './DisplayMedia';
 import styled from 'styled-components';
 import axios from 'axios';
+import Calendar from 'react-calendar';
 
 const MainContainerStyle = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #483D3F;
+`;
+
+const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 90vh;
-  margin: 0 auto;
-  background-color: #483D3F;
+  width: 30%;
+  border-right: 3px solid #058ED9;
+  padding: 1rem;
 `;
 
 const Title = styled.div`
@@ -29,10 +39,20 @@ const Description = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  width: 80%;
+  font-size: .8rem;
+  width: 95%;
   color: white;
   margin: 0 auto;
+  padding: 1rem;
+`;
+
+const Photo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  color: white;
 `;
 
 const ImgContainer = styled.div`
@@ -40,7 +60,6 @@ const ImgContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 60%;
   margin: 20px auto;
   background-color: #483D3F;
 `;
@@ -58,9 +77,9 @@ function PhotoContainer() {
     .then(res => {
       setUrl(res.data.url);
       setTitle(res.data.title);
-      setDescription(res.data.explanation);
       setDate(res.data.date);
-      setMedia(res.data.media_type) 
+      setDescription(res.data.explanation);
+      setMedia(res.data.media_type); 
     })
     .catch(error => {
       console.log('You have an error.', error);
@@ -69,11 +88,16 @@ function PhotoContainer() {
 
   return (
       <MainContainerStyle>
-        <Title>{ title }</Title>
-        <ImgContainer>
-          <DisplayMedia media={ media } url={ url }/>
-        </ImgContainer>
-        <Description>{ description }</Description>
+        <Info>
+          <Description>{ description }</Description>
+          <Calendar />
+        </Info>
+        <Photo>
+          <Title>{ title }</Title>
+          <ImgContainer>
+            <DisplayMedia media={ media } url={ url }/>
+          </ImgContainer>
+        </Photo>
       </MainContainerStyle>
   )
 }
