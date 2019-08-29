@@ -20,11 +20,8 @@ const Info = styled.div`
   justify-content: center;
   align-items: center;
   width: 30%;
-  height: 100%;
-  background-color: 
-  color: white;
-  font-size: 1rem;
-  overflow-y: scroll;
+  border-right: 3px solid #058ED9;
+  padding: 1rem;
 `;
 
 const Title = styled.div`
@@ -42,10 +39,11 @@ const Description = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  width: 80%;
+  font-size: .8rem;
+  width: 95%;
   color: white;
   margin: 0 auto;
+  padding: 1rem;
 `;
 
 const Photo = styled.div`
@@ -53,7 +51,7 @@ const Photo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 95%;
   color: white;
 `;
 
