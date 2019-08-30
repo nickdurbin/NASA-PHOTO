@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DisplayMedia from './DisplayMedia';
 import styled from 'styled-components';
 import axios from 'axios';
-import Calendar from 'react-calendar';
+// import Calendar from 'react-calendar';
 
 const MainContainerStyle = styled.section`
   display: flex;
@@ -10,6 +10,7 @@ const MainContainerStyle = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 80vh;
   margin: 0 auto;
   background-color: #483D3F;
 `;
@@ -59,7 +60,7 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 95%;
   margin: 20px auto;
   background-color: #483D3F;
 `;
@@ -67,13 +68,13 @@ const ImgContainer = styled.div`
 function PhotoContainer() {
 
   const [url, setUrl] = useState();
-  const [date, setDate] = useState();
+  const [date, setDate] = useState('');
   const [media, setMedia] = useState();
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
 
   useEffect(() => {
-    axios.get(`https://api.nasa.gov/planetary/apod?api_key=JiwEVnVzu9wP1E6TyHriFJA7YN5fcEJgROtS05Al`)
+    axios.get(`https://api.nasa.gov/planetary/apod?api_key=JiwEVnVzu9wP1E6TyHriFJA7YN5fcEJgROtS05Al&date=${date}`)
     .then(res => {
       setUrl(res.data.url);
       setTitle(res.data.title);
@@ -90,7 +91,7 @@ function PhotoContainer() {
       <MainContainerStyle>
         <Info>
           <Description>{ description }</Description>
-          <Calendar />
+          <input onChange={(e) => setDate(e.target.value)} type={'date'}></input>
         </Info>
         <Photo>
           <Title>{ title }</Title>
