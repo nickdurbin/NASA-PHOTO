@@ -11,7 +11,7 @@ const ImgStyle = styled.img`
 function DisplayMedia({ media, url }) {
   return (media === "video")
   ? 
-  <ReactPlayer url={ url } width='60%' height='100%' alt="NASA" controls='true'/>
+  <ReactPlayer url={ url } width='100%' height='60vh' alt="NASA" controls='true'/>
   :
   <ImgStyle src={ url } alt="NASA" />
 }
